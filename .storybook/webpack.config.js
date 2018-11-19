@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 
 module.exports = storybookBaseConfig => {
   const babelLoaderRule = storybookBaseConfig.module.rules.find(rule =>
@@ -8,6 +9,8 @@ module.exports = storybookBaseConfig => {
     rule =>
       rule.use && rule.use.some(use => /\/markdown-loader\//i.test(use.loader))
   );
+  const definitions = storybookBaseConfig.plugins.reduce((o, { definitions }) => !definitions ? o : { ...o, ...definitions }, {});
+// console.log('Definitions:', definitions);
   return {
     ...storybookBaseConfig,
     module: {
@@ -73,5 +76,12 @@ module.exports = storybookBaseConfig => {
         },
       ],
     },
+    plugins: [
+      new DefinePlugin({
+        // ...definitions,
+        PATH_PREFIX: '/',
+      }),
+      ...storybookBaseConfig.plugins,
+    ]
   };
 };
