@@ -35,7 +35,7 @@ Add-ons are generally easier to contribute to because they are not fully managed
 |               | Keyboard tabbing                                    | <icon name="icon--checkmark--solid" color="green" /> | <icon name="icon--checkmark--solid" color="green" /> |
 |               | Carbon custom focus states                          | <icon name="icon--checkmark--solid" color="green" /> |                                                      |
 | Visual + UX   | Carbon themed                                       | <icon name="icon--checkmark--solid" color="green" /> |                                                      |
-|               | Universal pattern <br>(fits for 2-3 use cases)      | <icon name="icon--checkmark--solid" color="green" /> |                                                      |
+|               | Universal pattern <br />(fits for 2-3 use cases)    | <icon name="icon--checkmark--solid" color="green" /> |                                                      |
 |               | Interaction states (hover, active, focus, disabled) | <icon name="icon--checkmark--solid" color="green" /> | <icon name="icon--checkmark--solid" color="green" /> |
 
 ## Who owns an add-on repo?

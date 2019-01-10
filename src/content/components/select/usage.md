@@ -36,7 +36,7 @@ The order of the select list should be based on the frequency of use. If applica
 ### Styling _select_ dropdowns
 
 <p>To maximize accessibility, it is strongly recommended not to style _select_ dropdowns.
-One of the <a href="https://www.w3.org/TR/WCAG20-TECHS/G202.html" target=blank>WCAG 2.0 standards</a> for accessibility is “ensuring keyboard control for all functionality.” CSS alternatives to `select` elements do not meet this requirement.</p>
+One of the <a href="https://www.w3.org/TR/WCAG20-TECHS/G202.html" target="_blank">WCAG 2.0 standards</a> for accessibility is “ensuring keyboard control for all functionality.” CSS alternatives to `select` elements do not meet this requirement.</p>
 
 While you can make a select element easily usable by a mouse, making it usable with keyboard navigation is complex. The default `select` element should follow this process:
 

@@ -42,6 +42,9 @@ exports.createPages = ({ actions, graphql }) => {
       allMdx {
         edges {
           node {
+            code {
+              scope
+            }
             fields {
               slug
               currentPage
