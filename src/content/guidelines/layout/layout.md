@@ -55,7 +55,7 @@ A [fluid grid](#fluid-grid) divides space by twos. This division is immediately 
 | 8                  |
 | 16                 |
 
-<br>
+<br />
 
 For dense content, use Mini Units for further alignment and spatial guidance.
 
@@ -204,7 +204,7 @@ In a UI layout, users expect to find certain types of content in certain areas. 
 2. Global sidenav
 3. Local sidenav
 
-<br><br>
+<br /><br />
 
 ![Dropdown Illustation](images/dropdown_illustration.png)
 
@@ -212,7 +212,7 @@ In a UI layout, users expect to find certain types of content in certain areas. 
 5. Content
 6. Footer
 
-<br><br>
+<br /><br />
 
 ![Dialog Illustation](images/dialog_illustration.png)
 
@@ -312,13 +312,13 @@ Choose an aspect ratio from the table, then multiply the base unit in each dimen
 | 4:3           |
 | 16:9          |
 
-<br><br>
+<br /><br />
 
 For example, to size a fluid box with a 2:1 landscape aspect ratio, you could span 4 columns in width and 2 column-widths of height. To size a fixed box with the same aspect ratio, you could start with an 80 pixel base unit, then multiply it by 4 in width and 2 in height, for a fixed box size of 320 by 160.
 
 ![aspect ratio](images/apsect_ratios_revised.png)
 
-<br><br>
+<br /><br />
 Aspect ratios do not apply to hybrid boxes, since one dimension is fixed and the other is fluid.
 
 ![hybrid box sample](images/hybrid_box_sample.png)
@@ -329,7 +329,7 @@ Use the fixed sizing scale to set vertical spacing between sections, by adding i
 
 `vimeo: https://vimeo.com/292028388`
 
-<br>
+<br />
 
 Take care to apply the intended vertical spacing just once:
 
@@ -353,7 +353,7 @@ The minor sizing scale is applied and used within all of our components:
 | **\$spacing-08** | 2.5   | 40  | ![spacing-2xl example](images/spacing-10.svg) |
 | **\$spacing-09** | 3     | 48  | ![spacing-3xl example](images/spacing-11.svg) |
 
-<br><br>
+<br /><br />
 When multiple components adhere to the same scale, grid relationships naturally emerge. For example, vertically aligning form fields such as checkboxes and radio buttons produces a grid effect when interior spacing is consistent.
 
 `vimeo: https://vimeo.com/292028752`

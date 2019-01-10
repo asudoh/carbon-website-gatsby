@@ -82,7 +82,7 @@ const renderAst = new rehypeReact({
 }).Compiler;
 
 export default ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   let currentPage = post.fields.currentPage;
   let slug = post.fields.slug;
   let tabs = post.frontmatter.tabs;
@@ -104,7 +104,9 @@ export default ({ data }) => {
         <div className="container--homepage">
           <HomepageHeader />
           <main className="page-content ibm--grid" id="maincontent">
-            {renderAst(post.htmlAst)}
+            <MDXRenderer scope={this.props.__mdxScope}>
+              {post.code.body}
+            </MDXRenderer>
           </main>
           <HomepageFooter />
         </div>
@@ -122,7 +124,9 @@ export default ({ data }) => {
           )}
         </PageHeader>
         <main className="page-content ibm--grid" id="maincontent">
-          {renderAst(post.htmlAst)}
+          <MDXRenderer scope={this.props.__mdxScope}>
+            {post.code.body}
+          </MDXRenderer>
         </main>
         <NextPrevious
           slug={slug}
@@ -136,9 +140,11 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      htmlAst
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      code {
+        body
+      }
       fields {
         slug
         currentPage

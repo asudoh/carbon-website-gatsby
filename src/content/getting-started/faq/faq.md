@@ -56,7 +56,7 @@ Twitter: <a href="https://twitter.com/_carbondesign" target="_blank">@_carbondes
 
 **Slack channels (IBM internal only)**
 
-<p>For design questions: #carbon-design-system<br>
+<p>For design questions: #carbon-design-system<br />
 For developer questions: #carbon-components, #carbon-react</p>
 
 **GitHub repos**

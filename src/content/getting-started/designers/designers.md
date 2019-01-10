@@ -15,17 +15,17 @@ The design kit is available to the public through GitHub and internally to IBMer
 
 ### Why Sketch?
 
-<p><a href="https://www.sketchapp.com/" target=blank>Sketch</a> is rapidly becoming the industry-standard software for UI design on Mac and is recommended by the IBM Design System team. Sketch is relatively affordable to license, and offers a 30-day free trial for new users. There are also plenty of free tutorials available online.</p>
+<p><a href="https://www.sketchapp.com/" target="_blank">Sketch</a> is rapidly becoming the industry-standard software for UI design on Mac and is recommended by the IBM Design System team. Sketch is relatively affordable to license, and offers a 30-day free trial for new users. There are also plenty of free tutorials available online.</p>
 
 ### Releases
 
-<p>The Carbon team releases frequent updates to the design kit. We track all release updates in our <a href="https://github.com/carbon-design-system/carbon-design-kit/releases" target=blank>change log</a>, so check back frequently!</p>
+<p>The Carbon team releases frequent updates to the design kit. We track all release updates in our <a href="https://github.com/carbon-design-system/carbon-design-kit/releases" target="_blank">change log</a>, so check back frequently!</p>
 
 ### Download from GitHub
 
 1. Download the Carbon Design Kit
 
-   - Go to the <a href="https://github.com/carbon-design-system/carbon-design-kit" target=blank> Carbon Design Kit</a> repo and click the folder for latest version of the Carbon Design Kit.
+   - Go to the <a href="https://github.com/carbon-design-system/carbon-design-kit" target="_blank"> Carbon Design Kit</a> repo and click the folder for latest version of the Carbon Design Kit.
    - On the next page click `Carbon Design Kit.sketch`
    - Click the “View Raw” link to begin downloading the kit.
      ![Carbon Design Kit repo screenshot](images/designers-2.png)
