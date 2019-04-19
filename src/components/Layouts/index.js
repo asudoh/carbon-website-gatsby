@@ -29,6 +29,7 @@ import {
   WebsiteFooter,
   WebsiteSwitcher,
   WebsiteCodeSnippet,
+  DoDontExample,
 } from '@carbon/addons-website';
 
 import '../../polyfills';
@@ -38,8 +39,7 @@ import ColorBlock from '../ColorBlock';
 import ComponentCode from '../ComponentCode';
 import ComponentDocs from '../ComponentDocs';
 import ComponentReact from '../ComponentReact';
-import DoDontExample from '../DoDontExample';
-import WebsiteTabs from '../WebsiteTabs'; 
+import WebsiteTabs from '../WebsiteTabs';
 import SimpleColumns from '../SimpleColumns';
 import Video from '../Video';
 import PageTable from '../PageTable';
