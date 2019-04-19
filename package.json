@@ -97,13 +97,9 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-<<<<<<< HEAD
     "@mdx-js/loader": "^1.0.0",
-=======
     "@commitlint/cli": "^7.5.0",
     "@commitlint/config-conventional": "^7.5.0",
-    "@mdx-js/loader": "^1.0.0-alpha.0",
->>>>>>> fbf804d2dbde4a1549c94d1ff4ff486845c00d39
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/addon-info": "^4.1.2",
     "@storybook/addon-knobs": "^3.4.7",
