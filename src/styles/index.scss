@@ -1,25 +1,11 @@
-//---------------------------------------
-// Carbon Components
-//---------------------------------------
-
-@import '@carbon/type/scss/type';
-@import '@carbon/type/scss/font-face/sans';
-@import '@carbon/type/scss/font-face/serif';
-@import '@carbon/type/scss/font-face/mono';
-@import '@carbon/type/scss/classes';
-
-@include carbon--type-reset();
-@include carbon--font-face-mono();
-@include carbon--font-face-sans();
-@include carbon--font-face-serif();
-@include carbon--type-classes();
-
-$feature-flags: (
-  ui-shell: true,
-  grid-columns-16: true,
-);
-
-@import 'carbon-components/scss/globals/scss/styles.scss';
+@import '@carbon/colors/scss/colors';
+@import '@carbon/layout/scss/breakpoint';
+@import '@carbon/layout/scss/spacing';
+@import '@carbon/themes/scss/tokens';
+@import '@carbon/type/scss/styles';
+@import 'carbon-components/scss/globals/scss/css--reset';
+@import 'carbon-components/scss/globals/scss/motion';
+@import 'carbon-components/scss/components/ui-shell/theme';
 
 $font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 

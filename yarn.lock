@@ -671,7 +671,7 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@carbon/colors@v10.1.1":
+"@carbon/colors@10.1.1", "@carbon/colors@v10.1.1":
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.1.1.tgz#854c33ccdf02ac319c06923268ba89cf83a58c93"
   integrity sha512-hni1iN0FUfQgnATqAT971WMAosl9YK7kQqp1V0vkF3d8rB/id+Y3K1GhDsXLKPfEAxdgE4+swGvID9tAY+a9kQ==
@@ -730,6 +730,13 @@
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.1.1.tgz#06608c451b222ee89abe3753cca6990690127af2"
   integrity sha512-FC5iOJLR2CwG5gJX5Wz6jpFCdiLOsKaCw949+t3waWRhdb1CJ9B3PDXM8KUOKRuwo4tsXQb2kd8wXkGNfdkWTw==
+
+"@carbon/themes@v10.1.1":
+  version "10.1.1"
+  resolved "https://registry.npmjs.org/@carbon/themes/-/themes-10.1.1.tgz#be51fd5901951dac9b607df7b98b142dd1ae66e4"
+  integrity sha512-QdmgPV8jpAdZuDLAZsVbkmrpqy4ZFhLHjDPtBh12yBoArejEJt23Ogrk1alvCtaRcpzmPftkpZQqlgb8Bt9A1g==
+  dependencies:
+    "@carbon/colors" "10.1.1"
 
 "@carbon/type@v10.1.1":
   version "10.1.1"

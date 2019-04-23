@@ -32,6 +32,7 @@ import PageTable from '../PageTable';
 import { a, p, h1, h2, h3, h4, h5, ul, ol } from '../markdown/Markdown';
 
 import timestamp from 'raw-loader!../../../build-timestamp';
+import '../../styles/vendor.scss';
 import '../../styles/index.scss';
 
 import { MDXProvider } from '@mdx-js/tag';

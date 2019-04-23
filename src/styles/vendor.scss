@@ -1,0 +1,22 @@
+//---------------------------------------
+// Carbon Components
+//---------------------------------------
+
+@import '@carbon/type/scss/type';
+@import '@carbon/type/scss/font-face/sans';
+@import '@carbon/type/scss/font-face/serif';
+@import '@carbon/type/scss/font-face/mono';
+@import '@carbon/type/scss/classes';
+
+@include carbon--type-reset();
+@include carbon--font-face-mono();
+@include carbon--font-face-sans();
+@include carbon--font-face-serif();
+@include carbon--type-classes();
+
+$feature-flags: (
+  ui-shell: true,
+  grid-columns-16: true,
+);
+
+@import 'carbon-components/scss/globals/scss/styles';

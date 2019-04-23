@@ -45,6 +45,7 @@
     "@carbon/grid": "v10.1.1",
     "@carbon/import-once": "v10.1.0",
     "@carbon/layout": "v10.1.1",
+    "@carbon/themes": "v10.1.1",
     "@carbon/type": "v10.1.1",
     "@mdx-js/mdx": "^1.0.0-alpha.0",
     "@mdx-js/tag": "^1.0.0-alpha.0",
