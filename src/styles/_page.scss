@@ -53,6 +53,8 @@ em {
 }
 
 .page-content {
+  position: relative;
+
   padding-top: rem(80px);
   padding-bottom: rem(136px);
 
@@ -200,6 +202,13 @@ em {
     margin-left: calc(25% + 0.5rem) !important;
     max-width: calc(75% - 0.5rem);
   }
+}
+
+.page-content > .wrapper > .bx--dropdown__wrapper {
+  position: absolute;
+  top: rem(80px);
+  right: rem(32px);
+  width: 10rem;
 }
 
 .bx--row .gatsby-resp-image-wrapper,

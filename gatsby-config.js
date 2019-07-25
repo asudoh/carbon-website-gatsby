@@ -1,8 +1,20 @@
 require('dotenv').config();
 
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const { PATH_PREFIX = '/' } = process.env;
+
+const sassOptions = {
+  includePaths: [path.resolve(__dirname, 'node_modules')],
+  importer: (url, prev, done) => {
+    done({
+      file: !/import-once(\.scss)?$/.test(url)
+        ? url
+        : path.resolve(__dirname, 'src/styles/import-once'),
+    });
+  },
+};
 
 module.exports = {
   pathPrefix: PATH_PREFIX,
@@ -75,16 +87,23 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: 'gatsby-plugin-sass-multiple-entries',
       options: {
-        includePaths: [path.resolve(__dirname, 'node_modules')],
-        importer: (url, prev, done) => {
-          done({
-            file: !/import-once(\.scss)?$/.test(url)
-              ? url
-              : path.resolve(__dirname, 'src/styles/import-once'),
-          });
-        },
+        sassOptions: [
+          sassOptions,
+          {
+            ...sassOptions,
+            data: `
+              $storybook--carbon--theme-name: 'custom-properties';
+              @import '${path.resolve(__dirname, 'src/styles/theme-chooser')}';
+            `,
+          },
+        ],
+        postCssPlugins: [
+          autoprefixer({
+            browsers: ['last 1 version', 'ie >= 11', 'Firefox ESR'],
+          }),
+        ],
       },
     },
     'gatsby-plugin-sitemap',

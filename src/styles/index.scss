@@ -19,6 +19,12 @@ $feature-flags: (
   grid-columns-16: true,
 );
 
+@if mixin-exists(carbon--theme--custom-properties) {
+  :root {
+    @include carbon--theme--custom-properties($carbon--theme--white);
+  }
+}
+
 @import 'carbon-components/scss/globals/scss/styles.scss';
 
 $font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;

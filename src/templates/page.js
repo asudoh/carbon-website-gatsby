@@ -1,7 +1,9 @@
 import '../polyfills';
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+
+import { Dropdown } from 'carbon-components-react';
 
 import Layout from '../components/Layouts';
 import EditLink from '../components/EditLink';
@@ -17,6 +19,44 @@ import {
   HomepageFooter,
   HomepageHeader,
 } from '../components/Homepage/Homepage';
+
+const themeSwitcherItems = [
+  {
+    id: 'white',
+    label: 'White',
+  },
+  {
+    id: 'g10',
+    label: 'Gray 10',
+  },
+  {
+    id: 'g90',
+    label: 'Gray 90',
+  },
+  {
+    id: 'g100',
+    label: 'Gray 100',
+  },
+];
+
+const ThemeSwitcherSection = ({ slug }) => {
+  const [theme, setTheme] = useState(themeSwitcherItems[0]);
+  const onSwitchTheme = useCallback(({ selectedItem }) => {
+    const { id } = selectedItem;
+    document.documentElement.dataset.componentExampleCarbonTheme = id;
+    setTheme(selectedItem);
+  }, []);
+  return !/\/components\/.*\/code$/i.test(slug) ? (
+    <></>
+  ) : (
+    <Dropdown
+      titleText="Choose theme for demo:"
+      items={themeSwitcherItems}
+      selectedItem={theme}
+      onChange={onSwitchTheme}
+    />
+  );
+};
 
 export default ({ data }) => {
   const post = data.mdx;
@@ -72,6 +112,7 @@ export default ({ data }) => {
         />
         <main className="page-content bx--grid" id="maincontent">
           <div className="wrapper">
+            <ThemeSwitcherSection slug={slug} />
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </div>
           <EditLink slug={slug} />

@@ -1,0 +1,15 @@
+{
+  "name": "gatsby-plugin-sass-multiple-entries",
+  "description": "Gatsby plugin to handle scss/sass files, compiling two entry points separately and then merge them",
+  "version": "0.1.0",
+  "dependencies": {
+    "postcss-discard-duplicates": "^4.0.0",
+    "sass-loader": "^7.0.0"
+  },
+  "license": "Apache-2",
+  "main": "index.js",
+  "peerDependencies": {
+    "gatsby": "2.0.110",
+    "node-sass": "^4.10.0"
+  }
+}

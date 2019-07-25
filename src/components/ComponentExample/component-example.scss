@@ -1,3 +1,21 @@
+@if mixin-exists(carbon--theme--custom-properties) {
+  :root .component-example__live {
+    @include carbon--theme--custom-properties($carbon--theme--white);
+  }
+
+  :root[data-component-example-carbon-theme='g10'] .component-example__live {
+    @include carbon--theme--custom-properties($carbon--theme--g10);
+  }
+
+  :root[data-component-example-carbon-theme='g90'] .component-example__live {
+    @include carbon--theme--custom-properties($carbon--theme--g90);
+  }
+
+  :root[data-component-example-carbon-theme='g100'] .component-example__live {
+    @include carbon--theme--custom-properties($carbon--theme--g100);
+  }
+}
+
 .component-example {
   width: 100%;
   max-width: 100%;
@@ -20,9 +38,9 @@
   position: relative;
   padding: $spacing-07 $spacing-07 $spacing-08;
   margin: 0;
-  background-color: $ui-02;
+  background-color: $ui-background;
   color: $text-01;
-  border: 1rem solid $ui-02;
+  border: 1rem solid $ui-background;
 }
 
 .component-example__live.component-example__live--light {
