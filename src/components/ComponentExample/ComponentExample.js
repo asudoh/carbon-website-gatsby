@@ -6,17 +6,23 @@ import classnames from 'classnames';
 import { RadioButtonGroup, RadioButton } from 'carbon-components-react';
 import { Launch16 } from '@carbon/icons-react';
 
-import CodeExample from '../CodeExample/CodeExample';
+import CodeExampleHTML from '../CodeExample/CodeExampleHTML';
+import CodeExampleReact from '../CodeExample/CodeExampleReact';
 import ComponentExampleLive from './ComponentExampleLive';
-import getHTMLFile from './getHTMLFile';
+import ComponentExampleLiveReact from './ComponentExampleLiveReact';
 
 class ComponentExample extends Component {
   static propTypes = {
     component: PropTypes.string,
     variation: PropTypes.string,
     codepenSlug: PropTypes.string,
+    defaultFrameworkVariant: PropTypes.oneOf('vanilla', 'react'),
     hasLightVersion: PropTypes.bool,
-    hasReactVersion: PropTypes.bool,
+    hasVanillaVersion: PropTypes.bool,
+    hasReactVersion: PropTypes.oneOfType(
+      PropTypes.bool,
+      PropTypes.oneOf('live', 'link')
+    ),
     hasAngularVersion: PropTypes.string,
     hasVueVersion: PropTypes.string,
     experimental: PropTypes.bool,
@@ -26,6 +32,7 @@ class ComponentExample extends Component {
 
   state = {
     currentFieldColor: 'field-01',
+    currentFrameworkVariant: this.props.defaultFrameworkVariant,
   };
 
   onSwitchFieldColors = value => {
@@ -34,19 +41,28 @@ class ComponentExample extends Component {
     });
   };
 
+  switchToVanilla = () => {
+    this.setState({ currentFrameworkVariant: 'vanilla' });
+  };
+
+  switchToReact = () => {
+    this.setState({ currentFrameworkVariant: 'react' });
+  };
+
   render() {
     const {
       component,
       variation,
       codepenSlug,
       hasLightVersion,
+      hasVanillaVersion,
       hasReactVersion,
       hasAngularVersion,
       hasVueVersion,
       experimental,
     } = this.props;
 
-    const { currentFieldColor } = this.state;
+    const { currentFieldColor, currentFrameworkVariant } = this.state;
 
     const classNames = classnames({
       'component-example__live--rendered': true,
@@ -89,19 +105,21 @@ class ComponentExample extends Component {
       }
     );
 
-    const currentHTMLFile = getHTMLFile({
-      component,
-      variation,
-      useLightVersion,
-    });
     const componentLink = `https://codepen.io/team/carbon/full/${codepenSlug}/`;
     const counter = Math.floor(Math.random() * 100) + 1;
+    const ComponentExampleLiveToUse =
+      currentFrameworkVariant !== 'react'
+        ? ComponentExampleLive
+        : ComponentExampleLiveReact;
+    const CodeExampleToUse =
+      currentFrameworkVariant !== 'react' ? CodeExampleHTML : CodeExampleReact;
 
+    /* eslint-disable no-script-url */
     return (
       <div className={lightUIclassnames}>
         <div className={liveBackgroundClasses} data-floating-menu-container>
           <div className={classNames}>
-            <ComponentExampleLive
+            <ComponentExampleLiveToUse
               component={component}
               variation={variation}
               useLightVersion={useLightVersion}
@@ -109,18 +127,36 @@ class ComponentExample extends Component {
           </div>
         </div>
         <div className="component-toolbar">
-          <div className="component-toolbar__current">Vanilla JS</div>
+          <div className="component-toolbar__current">
+            {currentFrameworkVariant === 'react' ? 'React' : 'Vanilla JS'}
+          </div>
           <div className="component-toolbar__links">
-            {hasReactVersion === true && (
+            {currentFrameworkVariant !== 'vanilla' && hasVanillaVersion && (
               <a
-                href={`http://react${
-                  !experimental ? '' : '-experimental'
-                }.carbondesignsystem.com/?selectedKind=${componentNameLink}`}
-                target="_blank"
-                rel="noopener noreferrer">
-                React <Launch16 />
+                href="javascript:void 0"
+                rel="noopener noreferrer"
+                onClick={this.switchToVanilla}>
+                Vanilla JS
               </a>
             )}
+            {currentFrameworkVariant !== 'react' &&
+              (hasReactVersion === 'live' ? (
+                <a
+                  href="javascript:void 0"
+                  rel="noopener noreferrer"
+                  onClick={this.switchToReact}>
+                  React
+                </a>
+              ) : (
+                <a
+                  href={`http://react${
+                    !experimental ? '' : '-experimental'
+                  }.carbondesignsystem.com/?selectedKind=${componentNameLink}`}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  React <Launch16 />
+                </a>
+              ))}
             {/* hasAngularVersion should be the query part of the storybook url */}
             {typeof hasAngularVersion === 'string' && (
               <a
@@ -165,9 +201,14 @@ class ComponentExample extends Component {
             </div>
           )}
         </div>
-        <CodeExample htmlFile={currentHTMLFile} />
+        <CodeExampleToUse
+          component={component}
+          variation={variation}
+          useLightVersion={useLightVersion}
+        />
       </div>
     );
+    /* eslint-enable no-script-url */
   }
 }
 

@@ -7,7 +7,7 @@ import {
   DIRECTION_BOTTOM,
 } from 'carbon-components/es/components/floating-menu/floating-menu';
 import InlineLoadingDemoButton from './inline-loading-demo-button';
-import getHTMLFile from './getHTMLFile';
+import getHTMLFile from '../../utils/getHTMLFile';
 
 const components = {
   ...carbonComponents,
